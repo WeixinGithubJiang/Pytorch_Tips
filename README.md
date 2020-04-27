@@ -22,3 +22,24 @@ pip install git+https://github.com/philferriere/cocoapi.git#subdirectory=PythonA
 ```bash
 python -m pip install PyYAML
 ```
+
+## 3. how to load MNIST dataset?
+> download files from the website http://yann.lecun.com/exdb/mnist/, unzip .gz files with the commands below:
+```bash
+gunzip file.gz
+```
+
+> install library for mnist dataset
+```bash
+pip install python-mnist
+```
+
+> load mnist dataset
+```python
+from mnist import MNIST
+mndata = MNIST('/path/to/mnist')
+images, labels = mndata.load_training()
+or
+images, labels = mndata.load_testing()
+```
+
